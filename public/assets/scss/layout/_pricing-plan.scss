@@ -1,0 +1,181 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  18. Pricing Plan CSS START
+/*----------------------------------------*/
+
+.pricing-plan-item{
+    background: var(--tp-common-white);
+    padding: 40px 0;
+
+    &-df{
+        background: var(--tp-heading-primary);
+        .tp-sqbtn-border {
+            color: var(--tp-common-white);
+            border: 2px solid var(--tp-common-black);
+            &:hover{
+                border-color: var(--tp-theme-1);
+            }
+        }
+        .tp-sqbtn-active {
+            &:hover{
+                color: var(--tp-common-white);
+            }
+        }
+    }
+}
+
+.plan-list{
+    padding: 0 50px;
+    @media #{$lg} {
+        padding: 40px 25px;
+    }
+    @media #{$xs} {
+        padding: 30px 15px;
+    }
+}
+
+.pricing-plan-btn{
+    padding: 0 50px;
+    @media #{$lg} {
+        padding: 40px 25px;
+    }
+    @media #{$xs} {
+        padding: 30px 15px;
+    }
+}
+
+.pricing{
+    &-meta{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+        @media #{$lg} {
+            padding: 40px 25px;
+        }
+        @media #{$xs} {
+            padding: 30px 15px;
+        }
+    }
+    &-name{
+        font-size: 16px;
+        font-weight: var(--tp-fw-sbold);
+        color: var(--tp-theme-1);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    &-star{
+        & ul{
+            & li{
+                list-style: none;
+                display: inline-block;
+                margin-right: 8px;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                @media #{$xs} {
+                    margin-right: 0;
+                }
+                & a{
+                    color: #FD9E47;
+                    display: block;
+                    font-size: 18px;
+                    @media #{$xs} {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+.plan-price{
+    padding: 15px 0;
+    background: #FAFAFA;
+    &-2{
+        background: var(--tp-grey-1);
+    }
+    &-3{
+        background: #2E2E2E;
+        padding-left: 50px;
+        padding-right: 50px;
+        @media #{$lg} {
+            padding: 40px 25px;
+        }
+        @media #{$xs} {
+            padding: 30px 15px;
+        }
+        & p{
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+    & .price{
+        font-size: 42px;
+        margin-bottom: 0;
+        font-weight: var(--tp-fw-sbold);
+        &-2{
+            color: var(--tp-common-white);
+        }
+        & span{
+            font-size: 20px;
+            font-weight: var(--tp-fw-medium);
+        }
+    }
+    &-4{
+        padding-left: 50px;
+        padding-right: 50px;
+        @media #{$lg} {
+            padding: 40px 25px;
+        }
+        @media #{$xs} {
+            padding: 30px 15px;
+        }
+        & p{
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #777B83;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+}
+.plan-list{
+    & ul{
+        & li{
+            display: inline-block;
+            list-style: none;
+            font-size: 15px;
+            color: var(--tp-heading-primary);
+            position: relative;
+            margin-left: 40px;
+            margin-bottom: 10px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            & i{
+                position: absolute;
+                left: -30px;
+                top: 5px;
+            }
+        }
+        & .disable{
+            color: var(--tp-grey-3);
+        }
+    }
+    &-2{
+        & ul{
+            & li{
+                color: var(--tp-common-white);
+            }
+            & .disable{
+                color: var(--tp-grey-3);
+            }
+        }
+    }
+}
+.pr-plan-item-border{
+    border: 1px solid var(--tp-grey-1);
+}

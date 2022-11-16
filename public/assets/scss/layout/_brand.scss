@@ -1,0 +1,28 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  11. Brand  CSS START
+/*----------------------------------------*/
+
+.tpbrand{
+    &__slider{
+        &-item{
+            display: flex;
+            justify-content: center;
+        }
+        &-active{
+            & .slick-slide img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+//tpbs slider
+
+.tpbs-slider-item{
+    & img{
+        margin:  0 auto;
+    }
+}

@@ -1,0 +1,132 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  20. Privacy CSS START
+/*----------------------------------------*/
+
+.privacy-title{
+    font-weight: var(--tp-fw-light);
+    font-size: 26px;
+    line-height: 1.2;
+    & b{
+        font-weight: var(--tp-fw-bold);
+    }
+}
+
+.privacy-nav{
+    position: sticky;
+    top: 140px;
+    & .nav-tabs{
+        border: 0;
+        padding: 0;
+        margin: 0;
+        position: relative;
+
+        &::before{
+            position: absolute;
+            content: '';
+            right: 75px;
+            background: var(--tp-grey-1);
+            width: 1px;
+            height: 100%;
+            @media #{$lg,$xs} {
+                right: 35px;
+            }
+        }
+        & .nav-item{
+            list-style: none;
+            margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            & .nav-link{
+                border: 0;
+                margin: 0;
+                padding: 0;
+                background-color: transparent;
+                font-size: 18px;
+                line-height: 1.2;
+                color: var(--tp-heading-primary);
+                background-repeat: no-repeat;
+                display: inline-block;
+                position: relative;
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    left: auto;
+                    bottom: 0;
+                    right: 0;
+                    width: 0%;
+                    height: 1px;
+                    background-color: #FD4766;
+                }
+                &:hover,
+                &.active{
+                    color: var(--tp-theme-1);
+
+                    &::after{
+                        width: 100%;
+                        left: 0;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// search-area css
+.search-wrapper{
+    padding: 40px 90px;
+    border: 1px solid var(--tp-grey-1);
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.09);
+    @media #{$xs} {
+        padding: 0 0;
+    }
+}
+.m-sidebar{
+    &-search {
+        position: relative;
+        & a {
+            width: 88px;
+            height: 88px;
+            text-align: center;
+            line-height: 88px;
+            background:  var(--tp-theme-1);
+            color: var(--tp-common-white);
+            font-size: 25px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        & input {
+            padding-left: 30px;
+            padding-right: 100px;
+            background: none;
+            height: 88px;
+            width: 100%;
+            border: 0;
+            outline: none;
+            border: 1px solid var(--tp-grey-1);
+            &::placeholder {
+                color: #999999
+            }
+            &:focus{
+                border-color: var(--tp-theme-1);
+            }
+        }
+    }
+}
+
+.privacy-item{
+    & ul{
+        margin-top: 20px;
+        padding-left: 20px;
+        & li{
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+}

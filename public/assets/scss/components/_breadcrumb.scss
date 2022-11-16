@@ -1,0 +1,83 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  24. BREADCRUMB CSS START
+/*----------------------------------------*/
+
+.breadcrumb{
+    &__area{
+        @media #{$xs} {
+            padding: 150px 0;
+        }
+    }
+    &__title{
+        font-size: 55px;
+        line-height: 1.3;
+        color: var(--tp-common-white);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @media #{$md} {
+            font-size: 50px;
+        }
+        @media #{$sm,$xs} {
+            font-size: 40px;
+        }
+    }
+    &__list{
+        & span{
+            font-size: 20px;
+            color: var(--tp-common-white);
+            font-weight: var(--tp-fw-medium);
+            padding-right: 3px;
+            margin-right: 3px;
+            text-transform: capitalize;
+            @media #{$md,$sm,$xs} {
+                font-size: 18px;
+            }
+            & a{
+                &:hover{
+                    color: var(--tp-theme-1);
+                }
+            }
+            & i{
+                font-size: 12px;
+            }
+        }
+        .tp-current{
+            color: var(--tp-theme-1);
+            position: relative;
+            display: inline;
+            background-image: linear-gradient(#FD4766, #FD4766), linear-gradient(#FD4766, #FD4766);
+            background-size: 0% 1px, 0 1px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.4s linear;
+            &:hover{
+                background-size: 0 2px, 100% 2px;
+            }
+        }
+    }
+    &__overlay{
+        position: relative;
+
+        &::after{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 3, 32, 0.06);
+        }
+    }
+}
+
+.tpbs-scroll-5 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	margin: 0 auto;
+	bottom: -20%;
+	z-index: 1;
+}

@@ -1,0 +1,181 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  00. Section title CSS START
+/*----------------------------------------*/
+
+.tp-sub-title{
+    font-size: 16px;
+    font-weight: var(--tp-fw-bold);
+    text-transform: uppercase;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(260.52deg, #1C99FE -4.98%, #7644FF 48.42%, #FD4766 96.9%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    @media #{$md,$sm} {
+        font-size: 15px;
+    }
+    @media #{$xs} {
+        font-size: 14px;
+    }
+    &-df{
+        color: var(--tp-common-white);
+    }
+    &-2{
+        color: var(--tp-common-white);
+        display: inline-block;
+        background: linear-gradient(260.52deg, #1C99FE -4.98%, #7644FF 48.42%, #FD4766 96.9%);
+        border-radius: 5px;
+        padding: 6px 12px;
+        line-height: 15px;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: var(--tp-fw-medium);
+    }
+}
+.tpsec-title{
+    font-size: 45px;
+    line-height: 1.2;
+    @media #{$sm} {
+        font-size: 35px;
+    }
+}
+.tp-title{
+    font-size: 45px;
+    line-height: 1.2;
+    @media #{$md} {
+        font-size: 40px;
+    }
+    @media #{$sm} {
+        font-size: 35px;
+        & br{
+            display: none;
+        }
+    }
+    @media #{$xs} {
+        font-size: 32px;
+        & br{
+            display: none;
+        }
+    }    
+    &-df{
+        color: var(--tp-common-white);
+        line-height: 1.3;
+        @media #{$md} {
+            font-size: 35px;
+        }
+        @media #{$xxl,$xl} {
+            & br{
+                display: none;
+            }
+        }
+    }
+}
+.sec-quote-text{
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: var(--tp-fw-medium);
+}
+.separator{
+    position: relative;
+    &::before{
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 88px;
+        top: -15px;
+        left: 95%;
+        transform: translateX(-95%);
+        background: linear-gradient(189.82deg, #1C99FE 0%, #7644FF 44.68%, #FD4766 85.24%);
+    }
+}
+.tpbs-sub-title{
+    font-size: 16px;
+    font-weight: var(--tp-fw-bold);
+    color: var(--tp-grey-3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+.tpbs-title{
+    font-size: 45px;
+    line-height: 1.4;
+    @media #{$lg,$md} {
+        font-size: 40px;
+    }
+    @media #{$sm,$xs} {
+        font-size: 35px;
+        & br{
+            display: none;
+        }
+    }
+    & span{
+        font-weight: var(--tp-fw-light);
+    }
+    &-df{
+        font-size: 80px;
+        position: relative;
+        @media #{$xl} {
+            font-size: 65px;
+        }
+        @media #{$lg} {
+            font-size: 60px;
+        }
+        @media #{$md} {
+            font-size: 50px;
+        }
+        @media #{$sm} {
+            font-size: 45px;
+        }
+        @media #{$xs} {
+            font-size: 25px;
+        }
+        & span{
+            font-weight: var(--tp-fw-light);
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            width: 10%;
+            height: 2px;
+            background: var(--tp-heading-primary);
+            bottom: -1px;
+            @include transition(.4s);
+            visibility: hidden;
+            opacity: 0;
+        }
+        &:hover{
+            &::before{
+                width: 71%;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+.tpbs-title-2{
+    color: var(--tp-common-white);
+}
+//tp-minimal section
+.tpds-title{
+    font-size: 45px;
+    line-height: 1.3;
+    @media #{$lg,$md} {
+        font-size: 40px;
+        & br{
+            display: none;
+        }
+    }
+    @media #{$sm,$xs} {
+        font-size: 35px;
+        & br{
+            display: none;
+        }
+    }
+    & span{
+        font-weight: 300;
+    }
+}

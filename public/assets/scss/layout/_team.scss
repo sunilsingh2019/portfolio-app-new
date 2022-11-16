@@ -1,0 +1,197 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  15. Team CSS START
+/*----------------------------------------*/
+/*------------------------
+    Team Styles 
+----------------------*/
+
+.tp-team {
+    position: relative;
+    &__thumbnail{
+        position: relative;
+        & img{
+            @include border-radius(10px);
+            width: 100%;
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(3.98deg, rgba(0, 0, 0, 0) 3.24%, #000000 93.62%);
+            border-radius: 10px;
+            transform: rotate(-180deg);
+            visibility: hidden;
+            opacity: 0;
+            @include transition(.3s);
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(260.52deg, #1C99FE -4.98%, #7644FF 48.42%, #FD4766 96.9%);
+            border-radius: 10px;
+            visibility: hidden;
+            opacity: 0;
+            @include transition(.3s);
+            z-index: -1;
+        }
+    }
+    &__content{
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        @include transition(.3s);
+    }
+    &__title{
+        font-size: 22px;
+        color: var(--tp-common-white);
+        font-weight: var(--tp-fw-medium);
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+        &-2{
+            font-size: 22px;
+            font-weight: var(--tp-fw-medium);
+            &:hover{
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+    &__designation{
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: var(--tp-fw-sbold);
+        display: block;
+        color: var(--tp-theme-1);
+        margin-bottom: 10px;
+        &-2{
+            font-size: 13px;
+        text-transform: uppercase;
+        font-weight: var(--tp-fw-sbold);
+        display: block;
+        color: var(--tp-theme-1);
+        margin-bottom: 10px;
+        }
+    }
+    &__social{
+        & a{
+            font-size: 16px;
+            color: var(--tp-common-white);
+            margin: 0 7px;
+            display: inline-block;
+            &:hover{
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+    &:hover{
+        & .tp-team__content{
+            visibility: visible;
+            opacity: 1;
+            bottom: 30px;
+        }
+        & .tp-team__thumbnail{
+            &::before{
+                visibility: visible;
+                opacity: 1;
+            }
+            &::after{
+                transform: rotate(-4.22deg);
+                visibility: visible;
+                opacity: 1;
+                @media #{$sm,$xs} {
+                    transform: rotate(-2.22deg);
+                }
+            }
+        }
+    }
+}
+
+// tp-team -2 css
+.tpteam__img {
+	position: relative;
+}
+.tpteam__img img {
+    border-radius: 10px;
+}
+.tpteam__social {
+	position: absolute;
+	bottom: 40px;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s;
+	background: var(--tp-common-white);
+	display: inline-block;
+    padding: 20px 10px;
+	margin-left: 60px;
+	margin-right: 60px;
+    transform: scale(.9);
+    transition: .3s;
+    @media #{$xl} {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    @media #{$md} {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    @media #{$xs} {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+.tpteam__social a {
+	color: var(--tp-heading-primary);
+	font-size: 20px;
+	margin: 0 15px;
+    @media #{$xs} {
+        margin: 0 10px;
+    }
+    &:hover{
+        color: var(--tp-theme-1);
+    }
+}
+.tpteam__text {
+	padding-top: 25px;
+}
+.tpteam-title a:hover{
+    color: var(--tp-theme-1);
+}
+.tpteam-title {
+	font-weight: var(--tp-fw-sbold);
+	font-size: 22px;
+}
+.team-designation{
+    font-size: 13px;
+    font-weight: var(--tp-fw-bold);
+    color: var(--tp-theme-1);
+    display: block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.tpteam:hover .tpteam__social{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.team-brand{
+    padding-top: 105px;
+    padding-bottom: 125px;
+}

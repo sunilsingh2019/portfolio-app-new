@@ -1,0 +1,180 @@
+@use '../utils' as *;
+
+
+/* custome carousel nav dot css */
+
+// slick slider nav dot
+.tp-arrow-style{
+    & button.swiper-arrow{
+        background: var(--tp-common-white);
+        height: 60px;
+        width: 60px;
+        line-height: 58px;
+        font-size: 18px;
+        color: var(--tp-common-black-2);
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        border: 1px solid #ECEFF4;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0px;
+        vertical-align: middle;
+        transition: all 0.3s ease-out 0s;
+        position: absolute;
+        left: -100px;
+        transition: .3s;
+        z-index: 1;
+        @media #{$xxl} {
+            left: -35px;
+        }
+        @media #{$xl,$lg,$md} {
+            left: -25px;
+        }
+        &:hover{
+            background: var(--tp-theme-1);
+            border-color: var(--tp-theme-1);
+            color: var(--tp-common-white);
+        }
+        &.tp-slick-next{
+            left: auto;
+            right: -100px;
+            @media #{$xxl} {
+                right: -35px;
+            }
+            @media #{$xl,$lg,$md} {
+                right: -25px;
+            }
+        }
+        @media #{$sm,$xs} {
+            display: none !important;
+        }   
+    }
+}
+.tp-dot-style{
+    & .slick-dots{
+        text-align: center;
+        list-style: none;
+        & li{
+            display: inline-block;
+        }
+    }
+}
+.tp-dot-style{
+    .swiper-pagination-bullets {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        .swiper-pagination-bullet {
+            display: block;
+            width: 8px;
+            height: 8px;
+            margin: 0 7px;
+            border: none;
+            border-radius: 100%;
+            background-color: #CFCFCF;
+            text-indent: -9999px;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: var(--tp-heading-primary);
+            position: relative;
+            transform: scale(2);
+            box-shadow: inset 0 0 0 1px var(--tp-common-black-2);
+            background-color: transparent;
+        }
+        
+    }
+}
+.tpbs-area.tp-dot-style.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    list-style-type: none;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 50px;
+}
+
+//tpfrn-arrow css
+.trfrn-arrow-style{
+    font-size: 50px;
+    color: #B9B9B9;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+    margin: 0px;
+    vertical-align: middle;
+    transition: all 0.3s ease-out 0s;
+    &:hover{
+        color: var(--tp-heading-primary);
+    }
+}
+.tpfrn-arrow-wrap{
+    text-align: right;
+}
+.tp-swiper-prev.trfrn-arrow-style {
+	left: -35px;
+	position: relative;
+}
+
+//tpfrn-ts item margin 
+.tpfrn-ts-slider-active{
+    .slick-list {
+        margin: 0 -70px;
+        @media #{$xxl} {
+            margin: 0 -40px;
+        }
+        @media #{$xl,$lg,$md} {
+            margin: 0 -25px; 
+        }
+        @media #{$sm} {
+            margin: 0 -15px; 
+        }
+        @media #{$xs} {
+            margin: 0 -10px; 
+        }
+    }
+
+
+    
+    .slick-list{
+        margin-left: -100px;
+        margin-right: -100px;
+        @media #{$xxl}{
+            margin-left: -50px;
+            margin-right: -50px;
+        }
+        @media #{$xl}{
+            margin-left: -70px;
+            margin-right: -70px;
+        }
+        @media #{$lg}{
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        @media #{$md, $sm, $xs}{
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+    }
+}
+
+//tpfrn item margin 
+.trfrn-arrow-display,.trfrn-arrow-display2{
+    @media #{$xs} {
+        display: none;
+    }
+}

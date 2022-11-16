@@ -1,0 +1,742 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  09. Project CSS START
+/*----------------------------------------*/
+/* tp-project css */
+.tpproject{
+    position: relative;
+    &:hover{
+        & .tpproject__thumb img{
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+    &__thumb{
+        overflow: hidden;
+        & img{
+            width: 100%;
+            transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+    &__content{
+        box-shadow: 0px 10px 20px 0px rgba(130, 132, 134, 0.08);
+        background: #ffffff;
+        padding: 45px 50px;
+        @media #{$xs} {
+            padding: 45px 10px;
+        }
+        margin: 0 30px;
+            margin-top: 0px;
+        margin-top: -50px;
+        z-index: 1;
+        position: relative;
+        border-radius: 5px;
+        & .catagory{
+            color: var(--tp-common-white);
+            display: inline-block;
+            background: linear-gradient(260.52deg, #1C99FE -4.98%, #7644FF 48.42%, #FD4766 96.9%);
+            border-radius: 5px;
+            padding: 6px 12px;
+            line-height: 15px;
+        }
+    }
+    &__title{
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: var(--tp-fw-sbold);
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+    }
+    &__btn{
+        & a i{
+            font-size: 40px;
+            color: var(--tp-common-white);
+        }
+    }
+    &__menu{
+        & button{
+            margin: 15px 30px;
+            font-size: 16px;
+            font-weight: var(--tp-fw-bold);
+            color: #777B83;
+            text-transform: uppercase;
+            position: relative;
+            letter-spacing: 1px;
+            &:last-child{
+                margin-right: 0;
+            }
+            & .count-number{
+                position: absolute;
+                top: -25px;
+                right: 0;
+                color: var(--tp-theme-1);
+                font-size: 16px;
+                font-weight: var(--tp-fw-medium);
+                transition: .3s;
+            }
+            &::before{
+                position: absolute;
+                content: '\2f';
+                color: var(--tp-theme-1);
+                left: -10px;
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+        & button.active {
+            color: var(--tp-theme-1);
+            &::before{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    &__shape{
+        &-star{
+            position: absolute;
+            &-1{
+                top: 5%;
+                left: 9%;
+                @media #{$xs} {
+                    top: 12%;
+                    left: 9%;
+                }
+            }
+        }
+    }
+}
+.tpproject-btn{
+    & a i{
+        font-size: 40px;
+        color: var(--tp-common-white);
+    }
+}
+/* tp-project-2 css */
+.tpproject{
+    &-2 {
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        min-height: 515px;
+        &:before {
+            position: absolute;
+            height: 0%;
+            width: 100%;
+            content: '';
+            background: linear-gradient(3.98deg, rgba(28, 153, 254, 0) 20.98%, rgba(118, 68, 255, 0.76) 60.1%, #FD4766 100.18%);
+            border-radius: 10px;
+            transform: rotate(-180deg);
+            opacity: 0.85;
+            left: 0px;
+            bottom: 0px;
+            z-index: 1;
+            @include transition(0.3s);
+        }
+        &:hover {
+            .tpproject-2-text {
+                visibility: visible;
+                opacity: 1;
+                bottom: 23px;
+                @media #{$lg,$xs} {
+                    bottom: 13px;
+                }
+            }
+            &:before {
+                height: 100%;
+            }
+            & .tpproject-2-thumbnail {
+                transform: scale(1) translateZ(0);
+              }
+        }
+        &-thumbnail{
+            @include background();
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            background-color: #0a0a0a;
+            transform: scale(1.13) translateZ(0);
+            backface-visibility: hidden;
+            transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            & img {
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                border-radius: 12px;
+            }
+        }
+    }
+    &-3{
+        position: relative;
+        overflow: inherit;
+        z-index: 1;
+        &::after{
+            content: '';
+            z-index: -1;
+            background: linear-gradient(260.52deg, #1C99FE -4.98%, #7644FF 48.42%, #FD4766 96.9%);
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            transition: .3s;
+        }
+        &::before{
+            background: linear-gradient(3.98deg, rgba(0, 0, 0, 0) 3.24%, #000000 93.62%);
+            border-radius: 10px;
+            transform: rotate(-180deg);
+        }
+        & .tpproject-2-thumbnail{
+            transform: none;
+        }
+        &:hover{
+            &:after{
+                transform: rotate(-3.89deg);
+                @media #{$xs} {
+                    transform: rotate(-1.89deg);
+                }
+            }
+        }
+    }
+}
+.tpproject-2-text {
+    position: absolute;
+    left: 75px;
+    right: 75px;
+    text-align: center;
+    bottom: 0px;
+    @include transition(0.3s);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    @media #{$xl} {
+        left: 50px;
+        right: 50px;
+    }
+    @media #{$lg} {
+        left: 20px;
+        right: 20px;
+    }
+    @media #{$md,$xs,$sm} {
+        left: 40px;
+        right: 40px;
+    }
+    & .catagory {
+        font-size: 13px;
+        color: var(--tp-common-white);
+        text-transform: uppercase;
+        display: block;
+        font-weight: var(--tp-fw-bold);
+        letter-spacing: 1px;
+        & span{
+            font-weight: var(--tp-fw-regular);
+            margin-left: 8px;
+            display: inline-block;
+        }
+    }
+}
+.tpproject-2-text-df{
+    visibility: visible;
+    opacity: 1;
+    bottom: 30px;
+}
+.tpproject-2-title {
+    font-size: 22px;
+    font-weight: var(--tp-fw-sbold);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: var(--tp-common-white);
+   & a{
+    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+    display: inline;
+    background-size: 0% 1.5px, 0 1.5px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s linear;
+   }
+   &:hover a{
+    color: #fff;
+    background-size: 0 1.5px, 100% 1.5px;
+   }
+}
+.tpproject-area{
+    position: relative;
+}
+.tpproject__slider-2{
+    position: relative;
+    & .swiper-button-prev {
+        left: -35px;
+        right: auto;
+      }
+    & .swiper-button-next {
+        right: -35px;
+        left: auto;
+    }
+}
+.tp-slide-active {
+    .slick-list {
+    margin: 0 -15px; 
+    @media #{$sm,$xs} {
+        margin: 0 0; 
+    }
+    }
+    .slick-slide>div {
+        padding: 0 15px;
+        @media #{$sm,$xs} {
+            padding: 0 0;
+        }
+    }
+}
+
+
+//tpfrn project 3 css
+.tpfrn-project-sub-title{
+    display: block;
+    font-size: 13px;
+    font-weight: var(--tp-fw-bold);
+    text-transform: uppercase;
+    color: var(--tp-theme-1);
+}
+.tpfrn-project-title{
+    font-size: 22px;
+    font-weight: var(--tp-fw-sbold);
+    line-height: 1.4;
+    @media #{$sm,$xs} {
+        & br{
+            display: none;
+        }
+    }
+    &:hover a{
+        background-size: 0 1.5px, 100% 1.5px;
+    }
+    & a {
+        background-image: linear-gradient(#000000, #000000), linear-gradient(#000000, #000000);
+        display: inline;
+        background-size: 0% 1.5px, 0 1.5px;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 0.4s linear;
+    }
+    
+}
+.tpfrn-project:hover .tpfrn-project__thumb{
+    & img{
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+}
+.tpfrn-project__thumb{
+    overflow: hidden;
+    border-radius: 10px;
+    & img{
+        transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+        width: 100%;
+    }
+}
+.tpfrn-project-area{
+    & .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        right: 0;
+        left: auto;
+    }
+    & .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        right: 10%;
+        left: auto;
+        @media #{$sm} {
+            right: 25%;
+        }
+    }
+}
+.tpfrn-slide-active{
+    .slick-list {
+        margin: 0 -15px; 
+        // @media #{$sm,$xs} {
+        //     margin: 0 -20px; 
+        // }
+    }
+    .slick-slide>div {
+        padding: 0 15px;
+        @media #{$sm,$xs} {
+            padding: 0 30px;
+        }
+    }
+}
+
+//tpbs project 4 css
+.tpbs-project{
+    &__thumb{
+        position: relative;
+        overflow: hidden;
+        @include border-radius(10px);
+        &-shape{
+            position: absolute;
+            bottom: -50px;
+            @include transition(.3s);
+            visibility: hidden;
+            opacity: 0;
+        }
+        &-image{
+            & img{
+                @include border-radius(10px);
+                width: 100%;
+            }
+        }
+        &-grid{
+            @include border-radius(0);
+            & .tpbs-project__thumb-image{
+                & img{
+                    @include border-radius(0);
+                }
+            }
+        }
+    }
+    &__category{
+        font-size: 13px;
+        font-weight: var(--tp-fw-bold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #A0A2A4;
+        display: block;
+    }
+    &__title{
+        font-size: 22px;
+        font-weight: var(--tp-fw-sbold);
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+        &-2{
+            font-size: 35px;
+            font-weight: var(--tp-fw-medium);
+            @media #{$lg} {
+                font-size: 28px;
+            }
+            @media #{$md,$sm} {
+                font-size: 25px;
+            }
+            @media #{$xs} {
+                font-size: 22px;
+            }
+            & a{
+                position: relative;
+                display: inline;
+                background-image: linear-gradient(#141515, #141515), linear-gradient(#141515, #141515);
+                background-size: 0% 1px, 0 1px;
+                background-position: 100% 100%, 0 100%;
+                background-repeat: no-repeat;
+                transition: background-size 0.4s linear;
+            }
+            &:hover a{
+                background-size: 0 2px, 100% 2px;
+            }
+        }
+    }
+    &:hover{
+        & .tpbs-project__thumb-shape{
+            bottom: 0;
+            visibility: visible;
+            opacity: 1;
+        } 
+        & .tpbs-project__thumb-image img{
+
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+}
+// tp-project carousel
+.tpproject-area .tp-dot-style .swiper-pagination-bullets {
+    margin-top: 30px;
+}
+.tpproject-area .slick-slider {
+	padding-top: 50px;
+}
+
+// tp-creative css
+.tp-creative-item{
+    position: relative;
+    overflow: hidden;
+    &__thumb{
+        & img{
+            width: 100%;
+        }
+    }
+    &__content{
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 15px 25px;
+        background: rgba(0,0,0,0.70);
+        padding: 25px 20px;
+        visibility: hidden;
+        opacity: 0;
+        @include transform (translateX(-130%));
+        @include transition(.4s);
+        & .top-icon{
+            & button{
+                font-size: 20px;
+                display: inline-block;
+                color: var(--tp-common-white);
+                text-align: center;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                line-height: 48px;
+                border: 2px solid var(--tp-common-white);
+                &:hover{
+                    background: var(--tp-theme-1);
+                    color: var(--tp-common-white);
+                    border-color: var(--tp-theme-1);
+                }
+            }
+        }
+        .creative-info{
+            position: absolute;
+            bottom: 15px;
+            & .creative-catagory{
+                font-size: 13px;
+                font-weight: var(--tp-fw-sbold);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: var(--tp-theme-1);
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &-title{
+        font-size: 20px;
+        color: var(--tp-common-white);
+        font-weight: var(--tp-fw-medium);
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+    }
+    &:hover{
+        & .tp-creative-item__content{
+            visibility: visible;
+            opacity: 1;
+            @include transform (translateX(0%));
+        }
+    }
+}
+.tp-creative-padding{
+    padding-left: 65px;
+    padding-right: 65px;
+    @media #{$xs,$sm} {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.tp-creative__menu{
+    border-top: 1px solid #F1F1F1;
+    &-grid{
+        border-bottom: 1px solid #F1F1F1;
+        border-top: 0;
+        & .tp-cr-btn{
+            font-size: 14px;
+            text-transform: capitalize;
+            color: var(--tp-heading-primary);
+            border: none;
+            padding: 15px 0;
+            font-weight: var(--tp-fw-medium);
+            margin-bottom: 0;
+            margin: 0 30px;
+        }
+        .active{
+            color: var(--tp-theme-1);
+            position: relative;
+            &::before{
+                position: absolute;
+                content: '';
+                width: 25px;
+                height: 2px;
+                background: var(--tp-theme-1);
+                bottom: -1px;
+                margin: 0 auto;
+                text-align: center;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    & button{
+        font-size: 14px;
+        text-transform: capitalize;
+        color: #A1A1A1;
+        border: 1px solid #F1F1F1;
+        padding: 15px 30px;
+        margin: 0 10px;
+        font-weight: var(--tp-fw-medium);
+        margin-bottom: 20px;
+    }
+    &-curve{
+        & .active{
+            color: var(--tp-theme-1);
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: var(--tp-theme-1);
+                bottom: -1px;
+                margin: 0 auto;
+                text-align: center;
+                left: 0;
+                right: 0;
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            }
+            &::before{
+                width: 100%;
+            }
+        }
+    }
+    .active{
+        color: var(--tp-theme-1);
+    }
+}
+
+// tppg-project css
+.tppg-project{
+    position: relative;
+    overflow: hidden;
+    &__thumb{
+        position: relative;
+        &::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.40);
+            z-index: 1;
+            @include transform(translateX(-130%));
+            @include transition(.5s);
+        }
+        &-image{
+            overflow: hidden;
+            & img{
+                width: 100%;
+            }
+        }
+        &-2{
+            &::before{
+                top: 80px;
+                left: -80px;
+            }
+        }
+    }
+    &:hover{
+        & .tppg-project__thumb-image img {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+        & .tppg-project__thumb::before{
+            @include transform(translateX(0));
+        }
+        & .tppg-project__content{
+            bottom: 35px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &__content{
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        @include transition(.6s);
+
+        @media #{$xl, $md}{
+            left: 20px;
+        }
+    }
+    &-tag{
+        font-size: 13px;
+        font-weight: var(--tp-fw-sbold);
+        text-transform: uppercase;
+        color: var(--tp-common-white);
+        letter-spacing: 3px;
+        display: block;
+    }
+    &-title{
+        font-size: 22px;
+        font-weight: var(--tp-fw-medium);
+        color: var(--tp-common-white);
+        @media #{$lg} {
+            font-size: 20px;
+        }
+        & a{
+            position: relative;
+            display: inline;
+            background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+            background-size: 0% 1px, 0 1px;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.4s linear;
+        }
+        &:hover a{
+            background-size: 0 2px, 100% 2px;
+        }
+    }
+}
+
+// tp-furniture-projects
+.tp-furniture-project{
+    @media #{$xs} {
+        .gx-5{
+            --bs-gutter-x: auto;
+        }
+    }
+}
+
+//project-details css
+.project-details-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-nav-item{
+    display: flex;
+    align-items: center;
+    & a{
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: var(--tp-fw-sbold);
+        display: inline-block;
+        color: var(--tp-heading-primary);
+        & i{
+            font-size: 20px;
+            margin: 0 8px;
+            position: relative;
+            top: 2px;
+        }
+        &:hover{
+            color: var(--tp-theme-1);
+        }
+    }
+}
+
+
+.tpproject-5{
+    & .tpproject__btn a i{
+        color: #030A39;
+        opacity: .3;
+
+    }
+    & .tpproject__btn a:hover i{
+        opacity: 1;
+    }
+}
+
+  

@@ -1,0 +1,297 @@
+@use '../utils' as *;
+
+/* pulse btn */
+
+.pulse-btn{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	background-color: var(--tp-common-white);
+	@include border-radius(50%);
+	color: var(--tp-common-black);
+	animation: pulse 2s infinite;
+	&:hover{
+		background-color: var(--tp-common-black);
+		color: var(--tp-common-white);
+	}
+	& i{
+		padding-left: 2px;
+	}
+}
+
+/* hambur btn */
+.hamburger-btn{
+	width: 34px;
+	height: 30px;
+	position: relative;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	& span{
+		display: inline-block;
+		width: 100%;
+		background: var(--tp-common-black);
+		display: block;
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		opacity: 1;
+		left: 0;
+		z-index: 1;
+		&:nth-child(1){
+			top: 0;
+		}
+		&:nth-child(2){
+			top: 10px;
+		}
+		&:nth-child(3){
+			top: 20px;
+		}
+	}
+}
+
+.tp-solid-btn{
+	color: var(--tp-common-white);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 13px 34px;
+	border-radius: 500px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	background: var(--tp-theme-1);
+	border: 2px solid transparent;
+	text-align: center;
+	&:hover{
+		background: transparent;
+		color: var(--tp-theme-1);
+		border-color: var(--tp-theme-1);
+	}
+}
+
+.tp-border-btn{
+	color: var(--tp-heading-primary);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 13px 34px;
+	border-radius: 500px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	background: transparent;
+	border: 1px solid var(--tp-heading-primary);
+	&:hover{
+		background: var(--tp-theme-1);
+		color: var(--tp-common-white);
+		border-color: var(--tp-theme-1);
+	}
+}
+
+.tp-grd-btn{
+	padding: 15px 54px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% 100%;
+	color: var(--tp-common-white);
+	font-size: 14px;
+	font-weight: var(--tp-fw-sbold);
+	text-transform: uppercase;
+	letter-spacing: 2px;        
+	border-radius: 30px;
+	display: inline-block;
+	background-image: linear-gradient(260.16deg, #1C99FE 9.94%, #7644FF 54.82%, #FD4766 95.56%);
+	&:hover {
+	 background-position: 100% 50%; /* change the direction of the change here */
+	 color: #fff;
+	 text-decoration: none;
+   }
+}
+
+.tp-white-btn{
+	color: var(--tp-common-white);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 13px 34px;
+	border-radius: 500px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	background: transparent;
+	border: 1px solid #C0C3CC;
+	&:hover{
+		background: var(--tp-theme-1);
+		color: var(--tp-common-white);
+		border-color: var(--tp-theme-1);
+	}
+}
+
+.tp-trns-btn{
+
+}
+
+.tp-sm-btn{
+
+}
+
+.tpbs-btn{
+	color: var(--tp-heading-primary);
+	font-size: 14px;
+	font-weight: var(--tp-fw-bold);
+	text-transform: uppercase;
+	& i{
+		margin-left: 8px;
+	}
+	&:hover{
+		color: var(--tp-theme-1);
+	}
+}
+
+.tpbs-btn-2{
+	color: var(--tp-heading-primary);
+	font-size: 14px;
+	font-weight: var(--tp-fw-bold);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	& i{
+		margin-left: 8px;
+		color: var(--tp-theme-1);
+	}
+	&:hover{
+		color: var(--tp-theme-1);
+	}
+}
+
+.tpcr-btn{
+	color: var(--tp-heading-primary);
+	font-size: 22px;
+	font-weight: var(--tp-fw-bold);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	& i{
+		margin-left: 8px;
+		color: var(--tp-theme-1);
+	}
+	&:hover{
+		color: var(--tp-theme-1);
+	}
+}
+
+.tp-ts-btn{
+	font-size: 14px;
+	font-weight: var(--tp-fw-bold);
+	text-transform: uppercase;
+	display: inline-block;
+	color: var(--tp-theme-1);
+	letter-spacing: 1px;
+	& i{
+		margin-left: 10px;
+	}
+	&:hover{
+		color: var(--tp-heading-primary);
+	}
+}
+
+//square
+.tp-solid-btn-square{
+	color: var(--tp-common-white);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 13px 34px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	background: var(--tp-theme-1);
+	border: 2px solid transparent;
+	text-align: center;
+	&:hover{
+		background: transparent;
+		color: var(--tp-theme-1);
+		border-color: var(--tp-theme-1);
+	}
+}
+
+.tp-sqbtn-border{
+	color: var(--tp-heading-primary);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 16px 25px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	border: 2px solid var(--tp-border-1);
+	text-align: center;
+	&:hover{
+		background: var(--tp-theme-1);
+		color: var(--tp-common-white);
+		border-color: var(--tp-theme-1);
+	}
+}
+
+.tp-sqbtn-active{
+	color: var(--tp-common-white);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 16px 25px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	border: 2px solid var(--tp-theme-1);
+	text-align: center;
+	background: var(--tp-theme-1);
+	&:hover{
+		border-color: var(--tp-theme-1);
+		background: none;
+		color: var(--tp-heading-primary);
+	}
+}
+
+.tp-sqbtn-border-2{
+	color: var(--tp-heading-primary);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 13px 25px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	border: 2px solid var(--tp-border-1);
+	text-align: center;
+	&:hover{
+		background: var(--tp-theme-1);
+		color: var(--tp-common-white);
+		border-color: var(--tp-theme-1);
+	}
+}
+
+.tp-sqbtn-active-2{
+	color: var(--tp-common-white);
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 13px 25px;
+	display: inline-block;
+	font-weight: var(--tp-fw-bold);
+	transition: all 0.4s ease-in-out;
+	border: 2px solid var(--tp-theme-1);
+	text-align: center;
+	background: var(--tp-theme-1);
+	&:hover{
+		border-color: var(--tp-theme-1);
+		background: none;
+		color: var(--tp-heading-primary);
+	}
+}

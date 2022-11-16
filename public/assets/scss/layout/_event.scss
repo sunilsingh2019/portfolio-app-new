@@ -1,0 +1,82 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  16. Event CSS START
+/*----------------------------------------*/
+
+.tpevent-item{
+    display: flex;
+    align-items: center;
+    background: var(--tp-common-white);
+    & p{
+        @media #{$xl,$lg,$sm,$xs} {
+            & br{
+                display: none;
+            }
+        }
+    }
+    @media #{$md,$sm,$xs} {
+        display: block;
+    }
+}
+.tp-event-content{
+    flex: 1;
+    padding: 0 85px;
+    @media #{$xl} {
+        padding: 0 70px;
+    }
+    @media #{$lg} {
+        padding: 0 30px;
+    }
+    @media #{$md,$sm} {
+        padding: 40px 40px;
+    }
+    @media #{$xs} {
+        padding: 30px 30px;
+    } 
+}
+.tpevent-title{
+    font-size: 30px;
+    line-height: 1.4;
+    font-weight: var(--tp-fw-sbold);
+    & a{
+        background-image: linear-gradient(#141515, #141515), linear-gradient(#141515, #141515);
+        display: inline;
+        background-size: 0% 1.5px, 0 1.5px;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 0.4s linear;
+    }
+    &:hover{
+        & > a{
+            background-size: 0 1.5px, 100% 1.5px;
+        }
+    }
+    @media #{$xl,$lg,$sm,$xs} {
+        & br{
+            display: none;
+        }
+    }
+    @media #{$lg} {
+        font-size: 24px;
+    }
+    @media #{$sm,$xs} {
+        font-size: 20px;
+    }
+}
+.tpevent-sm-title{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: var(--tp-fw-sbold);
+    & span{
+        color: var(--tp-theme-1);
+        margin-left: 5px;
+    }
+}
+.tpevent-image{
+    & img{
+        @media #{$md,$sm,$xs} {
+            width: 100%;
+        }
+    }
+}

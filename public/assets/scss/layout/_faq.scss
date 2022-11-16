@@ -1,0 +1,77 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  19. Faq CSS START
+/*----------------------------------------*/
+.fq-item{
+    border: 0;
+    border-bottom: 1px solid #E1E1E1;
+    background: none;
+}
+.fq-button{
+    border: 0;
+    padding: 30px 0;
+    box-shadow: none;
+    font-size: 24px;
+    font-weight: var(--tp-fw-medium);
+    color: var(--tp-heading-primary);
+    position: relative;
+    background: none;
+    @media #{$xl,$lg,$md,$sm} {
+        font-size: 20px;
+    }
+    @media #{$xs} {
+        font-size: 18px;
+    }
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+    &:hover{
+        color: var(--tp-theme-1);
+    }
+    &::after{
+        display: none;
+    }
+    &::before{
+        position: absolute;
+        content: "\f077";
+        right: 0;
+        top: 32px;
+        font-family: var(--tp-ff-fontawesome);
+    }
+}
+.fq-button:not(.collapsed) {
+	color: var(--tp-theme-1);
+	background-color: transparent;
+	box-shadow: none;
+    background: none;
+    &::before{
+        transform: rotate(-180deg);
+    }
+}
+.fq-body{
+    padding: 20px 0;
+    padding-top: 0;
+}
+.accordion-flush .fq-item:last-child {
+	border-bottom: 1px solid #E1E1E1;
+}
+.faq-wrapper-1{
+    margin-right: 70px;
+    @media #{$md,$sm,$xs} {
+        margin-right: 0;
+    }
+}
+.faq-brand{
+    padding-top: 135px;
+    padding-bottom: 125px;
+}
+.pricing-brand{
+    padding-top: 135px;
+    padding-bottom: 125px;
+}
+.job-list{
+    padding-top: 30px;
+    padding-bottom: 125px;
+}

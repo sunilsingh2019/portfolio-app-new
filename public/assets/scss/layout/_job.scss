@@ -1,0 +1,135 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  21. Job CSS START
+/*----------------------------------------*/
+.job-list-item{
+    padding: 50px;
+    border: 1px solid var(--tp-grey-1);
+    transition: .3s;
+    &:hover{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition: .3s;
+    }
+    @media #{$sm,$xs} {
+        padding: 25px;
+    }
+}
+.job-list-title{
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: var(--tp-fw-sbold);
+    &:hover{
+        color: var(--tp-theme-1);
+    }
+    @media #{$xs,$sm} {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+}
+.job-name{
+    font-size: 14px;
+    font-weight: var(--tp-fw-regular);
+    color: #777B83;
+    display: block;
+    letter-spacing: 1px;
+}
+.job-state{
+    font-size: 18px;
+    font-weight: var(--tp-fw-sbold);
+    color: var(--tp-theme-1);
+    text-transform: uppercase;
+    display: block;
+    @media #{$md,$sm,$xs} {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+}
+.job-list-sm-title{
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: var(--tp-fw-sbold);
+}
+.job-sm-name{
+    font-size: 15px;
+    line-height: 24px;
+    color: #777B83;
+    font-weight: var(--tp-fw-regular);
+    letter-spacing: 1px;
+    display: block;
+}
+.job-type{
+    font-size: 15px;
+    color: var(--tp-heading-primary);
+    font-weight: var(--tp-fw-medium);
+    display: block;
+    text-decoration: underline;
+}
+
+// job details css
+.jobd-state{
+    border-bottom: 1px solid var(--tp-grey-1);
+}
+.job-dstate{
+    font-size: 18px;
+    color: var(--tp-theme-1);
+    font-weight: var(--tp-fw-sbold);
+    display: block;
+}
+.job-dtitle{
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: var(--tp-fw-sbold);
+}
+.job-sm-dtitle{
+    font-size: 14px;
+    font-weight: var(--tp-fw-regular);
+    letter-spacing: 1px;
+    color: #777B83;
+    text-transform: uppercase;
+}
+.job-dtext{
+    & a{
+        font-size: 16px;
+        font-weight: var(--tp-fw-medium);
+        color: var(--tp-heading-primary);
+    }
+}
+.job-feature-list{
+    & ul{
+        & li{
+            list-style: none;
+            margin-left: 40px;
+            position: relative;
+            font-size: 16px;
+            margin-bottom: 20px;
+            & i{
+                color: var(--tp-theme-1);
+                font-size: 18px;
+                position: absolute;
+                left: -35px;
+                top: 4px;
+            }
+            & b{
+                font-weight: var(--tp-fw-regular);
+                color: var(--tp-heading-primary);
+            }
+        }
+    }
+    &-2{
+        & ul{
+            & li{
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.job-details-contact{
+    margin-left: 100px;
+    @media #{$lg} {
+        margin-left: 60px;
+    }
+    @media #{$md,$sm,$xs} {
+        margin-left: 0;
+    }
+}

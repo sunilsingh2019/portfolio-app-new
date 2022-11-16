@@ -1,0 +1,70 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  14. Fact CSS START
+/*----------------------------------------*/
+
+.tpfact{
+    &__item{
+        background: var(--tp-common-white);
+        padding: 60px 30px;
+        padding-bottom: 55px;
+        @include border-radius(15px);
+        z-index: 2;
+        position: relative;
+        &-df{
+            border-radius: 0 !important;
+            padding: 100px 30px;
+            padding-bottom: 0;
+            border-top: 1px solid #ECEFF4;
+            @media #{$md,$sm,$xs} {
+
+            }
+        }
+    }
+}
+.fact-icon i{
+    font-size: 60px;
+    color: var(--tp-theme-1);
+}
+.fact-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & span{
+        background: linear-gradient(260.52deg, #1C99FE -4.98%, #7644FF 48.42%, #FD4766 96.9%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-size: 55px;
+        line-height: 1.2;
+        display: block;
+        font-weight: var(--tp-fw-bold);
+        font-family: var(--tp-ff-heading);
+        & i{
+            font-size: 30px;
+        }
+    }
+}
+.fact-title{
+    font-size: 16px;
+    font-weight: var(--tp-fw-medium);
+    color: var(--tp-heading-primary);
+    font-family: var(--tp-ff-heading);
+    &:hover{
+        color: var(--tp-theme-1);
+    }
+}
+.tpfact-wrapper{
+    @include border-radius(20px);
+    margin-top: -90px;
+}
+
+// about fact
+.tpfact-border-right{
+    border-right: 1px solid #ECEFF4;
+    @media #{$md,$sm,$xs} {
+        border-right: 0;
+    }
+}
